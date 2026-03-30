@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İyi ki Doğdun 🎉</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="envelope" id="envelope">
+        <div class="flap"></div>
+        <p>Açmak için dokun</p>
+
+        <div class="letter" id="letter">
+            İyi ki doğdun usıv 🎂<br><br>
+            Seninle bol HTML, CSS ve biraz da Java'lı yıllara 💻❤️
+        </div>
+    </div>
+
+    <div class="photo" id="photo">
+        <img src="foto.jpeg">
+    </div>
+
+</div>
+
+<audio id="music1" src="muzik1.mp3"></audio>
+<audio id="music2" src="muzik2.mp3"></audio>
+<script>
+    const envelope = document.getElementById("envelope");
+const photo = document.getElementById("photo");
+
+const music1 = document.getElementById("music1");
+const music2 = document.getElementById("music2");
+
+envelope.addEventListener("click", () => {
+
+    // Zarf açılma animasyonu
+    envelope.classList.add("open");
+
+    // İlk müzik
+    music1.play();
+
+    // 5 saniye sonra foto geçişi
+    setTimeout(() => {
+        envelope.style.display = "none";
+        photo.style.display = "block";
+
+        music1.pause();
+
+        music2.currentTime = 40;
+        music2.play();
+
+    }, 10000);
+
+});
+</script>
+
+</body>
+</html>
